@@ -1,1 +1,1 @@
-Sem nalozita fotografije slika1.jpg do slika6.jpg za Dijaka A.
+Upload Student A's photos here as slika1.jpg through slika6.jpg.\n

@@ -1,11 +1,169 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Student COIL SDG interactive gallery"><title>Our SDG Story | COIL 2026</title><link rel="stylesheet" href="style.css"></head>
-<body><a class="skip" href="#main">Skip to content</a><header class="nav"><a class="brand" href="#home"><span class="brand-mark">✳</span> COIL<span class="brand-light"> / SDG LAB</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navlinks">☰ Menu</button><nav id="navlinks" aria-label="Main navigation"><a href="#problem">The Problem</a><a href="#gallery">Gallery</a><a href="#solutions">Take Action</a><a href="#journey">Our Journey</a><a href="#team">Our Team</a></nav></header>
-<main id="main"><section class="hero" id="home"><div class="hero-inner"><span class="eyebrow">COIL PROJECT 2026 · STUDENT SHOWCASE</span><div class="sdg-chip">SDG 12 <span>Responsible Consumption & Production</span></div><h1>Small actions.<br><em>Big impact.</em></h1><p class="lead">How can we make technology last longer and create less electronic waste? Explore our story, photos and ideas.</p><div class="hero-actions"><a class="btn btn-light" href="#gallery">Explore the gallery ↗</a><a class="btn btn-outline" href="#solutions">Try our interactive quiz →</a></div><p class="hero-hint">✎ REPLACE: title, SDG number, introduction and background photo</p></div><div class="hero-art" aria-hidden="true"><span class="art-orbit">12</span><span class="art-label">RETHINK<br>REUSE<br>REPAIR</span></div></section>
-<section class="section intro" id="problem"><div class="section-heading"><div><span class="kicker">01 / UNDERSTAND</span><h2>The problem <span class="accent">we see.</span></h2></div><p>Introduce one specific challenge related to your chosen SDG. Explain why it matters and whom it affects.</p></div><div class="problem-grid"><article class="problem-main"><span class="small-tag">OUR CHALLENGE</span><h3>Electronic waste is growing.</h3><p>Phones, laptops and other devices are often replaced before the end of their useful life. Repairing and reusing electronics can help reduce waste and save resources.</p><p class="hint">✎ REPLACE: Write 3–5 sentences about your own researched problem. Add a reliable source for factual claims.</p><a class="text-link" href="https://sdgs.un.org/goals/goal12" target="_blank" rel="noopener noreferrer">Learn more about SDG 12 ↗</a></article><aside class="fact-card"><div class="fact-icon">↺</div><h3>Think before you replace.</h3><p>Could this device be repaired, shared, donated or recycled responsibly?</p><span class="fact-bottom">YOUR KEY MESSAGE GOES HERE</span></aside></div></section>
-<section class="section gallery-section" id="gallery"><div class="section-heading"><div><span class="kicker">02 / DOCUMENT</span><h2>Through <span class="accent">our lens.</span></h2></div><p>Replace these sample illustrations with your own edited photographs. Minimum: six original photographs per student.</p></div><div class="filters" role="group" aria-label="Filter photographs"><button class="filter active" data-filter="all" aria-pressed="true">All photos</button><button class="filter" data-filter="challenge" aria-pressed="false">The challenge</button><button class="filter" data-filter="solutions" aria-pressed="false">Solutions</button><button class="filter" data-filter="behind" aria-pressed="false">Behind the scenes</button></div><div class="photo-grid" id="photo-grid"></div><p class="hint gallery-hint">✎ REPLACE: Add at least 12 own photos in <code>assets/images/</code>, then update <code>gallery-data.js</code>. Click a photo to open it.</p></section>
-<section class="section action-section" id="solutions"><div class="section-heading"><div><span class="kicker">03 / ACT</span><h2>Ideas into <span class="accent">action.</span></h2></div><p>Choose at least one interactive element: a quiz, survey, game, calculator or your own mini-app. This template includes two examples.</p></div><div class="action-grid"><article class="interactive-card"><span class="small-tag">INTERACTIVE QUIZ</span><h3>What would you do?</h3><p>Choose an answer and receive instant feedback.</p><div id="quiz" class="quiz"><div class="quiz-meta"><span id="quiz-progress">Question 1 of 3</span><span id="quiz-score">Score: 0</span></div><div class="progress-track"><div id="quiz-bar"></div></div><h4 id="quiz-question"></h4><div id="quiz-options" class="quiz-options"></div><p id="quiz-feedback" class="feedback" aria-live="polite"></p><button id="quiz-next" class="btn btn-dark" hidden>Next question →</button><div id="quiz-finish" hidden><h4 id="quiz-result"></h4><button id="quiz-restart" class="btn btn-dark">Try again ↻</button></div></div></article><article class="interactive-card survey-card"><span class="small-tag">INSTANT SURVEY</span><h3>What is your first step?</h3><p>Vote to see an immediate chart of the responses <strong>in this browser session</strong>.</p><fieldset id="poll"><legend>How would you reduce electronic waste?</legend><label><input type="radio" name="poll" value="Repair"> Repair a device</label><label><input type="radio" name="poll" value="Donate"> Donate old electronics</label><label><input type="radio" name="poll" value="Recycle"> Recycle responsibly</label><button id="poll-vote" class="btn btn-dark" type="button">Submit my answer</button></fieldset><div id="poll-results" hidden aria-live="polite"><p class="results-note">Demo results (saved only in your browser)</p><div id="poll-bars"></div><button id="poll-reset" class="text-button" type="button">Reset demo votes</button></div><p class="hint">✎ OPTIONAL: For results shared by all visitors, connect a database/backend. GitHub Pages alone does not store shared survey responses.</p></article></div><div class="tips"><h3>Three actions you can take today</h3><div class="tip-grid"><div><span>01</span><h4>Repair</h4><p>Check whether your device can be fixed before buying a new one.</p></div><div><span>02</span><h4>Reuse</h4><p>Donate or repurpose electronics that still work.</p></div><div><span>03</span><h4>Recycle</h4><p>Take unusable electronics to an appropriate collection point.</p></div></div><p class="hint">✎ REPLACE: These tips with solutions related to your chosen SDG.</p></div></section>
-<section class="section journey-section" id="journey"><div class="section-heading"><div><span class="kicker">04 / CREATE</span><h2>Our <span class="accent">journey.</span></h2></div><p>Show how you researched the problem, took photos, designed the gallery and tested your interactive idea.</p></div><div class="timeline"><div><b>01</b><h3>Research</h3><p>We chose our SDG and explored the challenge.</p></div><div><b>02</b><h3>Capture</h3><p>We took original photos and edited them.</p></div><div><b>03</b><h3>Build</h3><p>We created our website and interactive content.</p></div><div><b>04</b><h3>Share</h3><p>We tested the gallery and published it on GitHub Pages.</p></div></div><div class="video-panel"><div><span class="small-tag">OPTIONAL PROJECT VIDEO</span><h3>Behind the scenes</h3><p>Add a short video about how you created the project. Use a YouTube embed or your own optimized MP4 file.</p><p class="hint">✎ REPLACE: The placeholder with your video embed.</p></div><div class="video-placeholder"><span>▶</span><strong>Project video</strong><small>Insert your video here</small></div></div></section>
-<section class="section team-section" id="team"><div class="section-heading"><div><span class="kicker">05 / CONNECT</span><h2>Meet the <span class="accent">creators.</span></h2></div><p>Introduce both students, explain who contributed what, and include both introductory videos from Task 3.</p></div><div class="team-grid"><article class="student"><div class="avatar">A</div><span class="small-tag">STUDENT A</span><h3>Your Name</h3><p>Photography, SDG introduction and homepage design.</p><div class="video-slot">▶ Introduction video A <small>Replace with embedded video</small></div></article><article class="student"><div class="avatar second">B</div><span class="small-tag">STUDENT B</span><h3>Your Partner's Name</h3><p>Problem research, interactive quiz and photo editing.</p><div class="video-slot">▶ Introduction video B <small>Replace with embedded video</small></div></article></div></section>
-<section class="closing"><span class="kicker">06 / INSPIRE</span><h2>Every small action<br><em>makes a difference.</em></h2><p>What will you do today?</p><a class="btn btn-light" href="#home">Back to the top ↑</a><p class="hint">✎ REPLACE: Your own final message and call to action.</p></section></main><footer><div><strong>COIL / SDG LAB</strong><p>Student-created interactive gallery · 2026</p></div><p>Made by Student A & Student B · <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener noreferrer">UN Sustainable Development Goals ↗</a></p></footer>
-<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer"><button id="lightbox-close" class="lightbox-close" aria-label="Close photo viewer">×</button><img id="lightbox-image" src="" alt=""><p id="lightbox-caption"></p></div><script src="gallery-data.js"></script><script src="script.js"></script></body></html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spletna galerija o SDG 15 – življenju na kopnem, gozdovih, travnikih in biotski raznovrstnosti.">
+  <meta name="theme-color" content="#244b36">
+  <title>SDG 15 | Življenje na kopnem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskoči na vsebino</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Glavna navigacija">
+      <a class="brand" href="#domov"><span class="brand-mark">✳</span><span>NARAVA<span class="brand-light"> / SDG 15</span></span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Odpri navigacijo">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#sdg15">O cilju</a>
+        <a href="#tezave">Izzivi</a>
+        <a href="#galerija">Galerija</a>
+        <a href="#video">Videi</a>
+        <a href="#igra">Igra</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="domov">
+      <div class="hero-shade"></div>
+      <div class="hero-content wrap">
+        <p class="eyebrow light">TRAJNOSTNI RAZVOJ · CILJ 15</p>
+        <h1>SDG 15: Življenje na kopnem – <em>Ohranimo naše gozdove in travnike</em></h1>
+        <p class="hero-lead">Narava ni samo prostor, kjer živimo. Je dom neštetih vrst, naš zaveznik in odgovornost, ki jo delimo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#galerija">Razišči galerijo <span>↗</span></a>
+          <a class="text-link light-link" href="#sdg15">Spoznaj cilj 15 ↓</a>
+        </div>
+        <div class="hero-note"><span class="note-line"></span> MAJHNA DEJANJA. VELIKA RAZLIKA.</div>
+      </div>
+      <div class="hero-bottom wrap"><span>GOZDOVI</span><span>TRAVNIKI</span><span>BIOTSKA RAZNOVRSTNOST</span></div>
+    </section>
+
+    <section class="intro section wrap" id="sdg15">
+      <div class="section-kicker"><span>01</span> PRISPEVEK DIJAKA A</div>
+      <div class="intro-grid">
+        <div>
+          <h2>Življenje na kopnem je <em>naš skupni dom.</em></h2>
+          <p class="lead">Cilj trajnostnega razvoja 15 Združenih narodov spodbuja varovanje, obnovo in trajnostno rabo kopenskih ekosistemov.</p>
+        </div>
+        <div class="intro-copy">
+          <p>Gozdovi čistijo zrak, shranjujejo ogljik, zadržujejo vodo in nudijo življenjski prostor številnim rastlinam, živalim, glivam ter mikroorganizmom. Travniki so prav tako dragoceni: cvetoče rastline na njih zagotavljajo hrano opraševalcem, kot so čebele in metulji.</p>
+          <p>OZN si do leta 2030 prizadeva ohranjati kopenske in celinske sladkovodne ekosisteme, trajnostno gospodariti z gozdovi, obnoviti degradirana območja, preprečevati širjenje puščav ter ustaviti izgubo biotske raznovrstnosti in zaščititi ogrožene vrste.</p>
+          <div class="fact-row">
+            <div><strong>2030</strong><span>časovni okvir ciljev</span></div>
+            <div><strong>17</strong><span>ciljev trajnostnega razvoja</span></div>
+            <div><strong>15</strong><span>življenje na kopnem</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="challenge section" id="tezave">
+      <div class="wrap">
+        <div class="section-kicker"><span>02</span> PRISPEVEK DIJAKA B</div>
+        <div class="challenge-head">
+          <h2>Ko narava izgublja ravnovesje, <em>izgubljamo vsi.</em></h2>
+          <p class="lead">Tudi v naši okolici se srečujemo s težavami, ki vplivajo na zdravje ekosistemov.</p>
+        </div>
+        <div class="issue-grid">
+          <article class="issue-card">
+            <div class="issue-number">A / 01</div>
+            <div class="issue-icon">🌿</div>
+            <h3>Odpadki in invazivne rastline</h3>
+            <p>Črna odlagališča, plastika in drugi odpadki onesnažujejo gozdna tla ter ogrožajo živali. Težavo predstavljajo tudi tujerodne invazivne rastline, na primer japonski dresnik, ki se hitro širi in lahko izpodriva domače rastline.</p>
+            <div class="issue-tag">ONESNAŽEVANJE · TUJERODNE VRSTE</div>
+          </article>
+          <article class="issue-card">
+            <div class="issue-number">B / 02</div>
+            <div class="issue-icon">🐝</div>
+            <h3>Izguba habitatov in opraševalcev</h3>
+            <p>Ko izginjajo naravni travniki, mejice in stara drevesa, živali izgubijo hrano, zavetje in prostor za razmnoževanje. Manj cvetočih rastlin pomeni manj hrane za čebele, metulje in druge opraševalce.</p>
+            <div class="issue-tag">BIOTSKA RAZNOVRSTNOST · HABITATI</div>
+          </article>
+        </div>
+        <div class="action-strip"><span class="action-leaf">✳</span><p><strong>Kaj lahko naredimo?</strong> Odpadke odnesemo s seboj, sadimo domače vrste, ohranjamo cvetoče površine in spoštujemo življenjski prostor živali.</p></div>
+      </div>
+    </section>
+
+    <section class="gallery-section section wrap" id="galerija">
+      <div class="section-kicker"><span>03</span> FOTOGRAFSKA GALERIJA</div>
+      <div class="gallery-heading">
+        <div><h2>Narava skozi <em>naše oči.</em></h2><p class="lead">Dvanajst utrinkov lepote, izzivov in dobrih rešitev.</p></div>
+        <span class="photo-count">12 FOTOGRAFIJ <span>✳</span></span>
+      </div>
+      <div class="filter-bar" role="group" aria-label="Filtriraj fotografije">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">Vse fotografije <span>12</span></button>
+        <button class="filter-btn" data-filter="a" aria-pressed="false">Dijak A: Lepota narave <span>6</span></button>
+        <button class="filter-btn" data-filter="b" aria-pressed="false">Dijak B: Ogroženost in ukrepi <span>6</span></button>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <figure class="photo-card" data-student="a"><button class="photo-open" data-src="images/dijakA/slika1.jpg" data-title="Gozdna pot" data-description="Gozdna pot nas popelje v mirno okolje, kjer lahko opazujemo naravo."><div class="photo-placeholder forest"><span>🌲</span><small>FOTOGRAFIJA 01</small></div><figcaption><span class="photo-index">A · 01</span><strong>Gozdna pot</strong><span class="photo-arrow">↗</span><p>Mir in življenje pod krošnjami.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="a"><button class="photo-open" data-src="images/dijakA/slika2.jpg" data-title="Staro drevo z mahom" data-description="Stara drevesa in mahovi ustvarjajo mikrohabitate za številne organizme."><div class="photo-placeholder moss"><span>🌳</span><small>FOTOGRAFIJA 02</small></div><figcaption><span class="photo-index">A · 02</span><strong>Staro drevo z mahom</strong><span class="photo-arrow">↗</span><p>Dom številnih drobnih organizmov.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="a"><button class="photo-open" data-src="images/dijakA/slika3.jpg" data-title="Čebela na cvetu" data-description="Čebele oprašujejo rastline in pomembno prispevajo k ohranjanju ekosistemov."><div class="photo-placeholder bee"><span>🐝</span><small>FOTOGRAFIJA 03</small></div><figcaption><span class="photo-index">A · 03</span><strong>Čebela na cvetu</strong><span class="photo-arrow">↗</span><p>Majhna opraševalka z veliko vlogo.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="a"><button class="photo-open" data-src="images/dijakA/slika4.jpg" data-title="Gozdna ptica" data-description="Ptice potrebujejo drevesa, grmovje in dovolj hrane za preživetje."><div class="photo-placeholder bird"><span>🐦</span><small>FOTOGRAFIJA 04</small></div><figcaption><span class="photo-index">A · 04</span><strong>Gozdna ptica</strong><span class="photo-arrow">↗</span><p>Glas gozda in del naravnega ravnovesja.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="a"><button class="photo-open" data-src="images/dijakA/slika5.jpg" data-title="Cvetoči travnik" data-description="Pester travnik zagotavlja hrano in zavetje številnim žuželkam."><div class="photo-placeholder meadow"><span>🌼</span><small>FOTOGRAFIJA 05</small></div><figcaption><span class="photo-index">A · 05</span><strong>Cvetoči travnik</strong><span class="photo-arrow">↗</span><p>Pisana zakladnica biotske raznovrstnosti.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="a"><button class="photo-open" data-src="images/dijakA/slika6.jpg" data-title="Gozdni potok" data-description="Čista voda je pomembna za rastline, živali in celoten gozdni ekosistem."><div class="photo-placeholder stream"><span>💧</span><small>FOTOGRAFIJA 06</small></div><figcaption><span class="photo-index">A · 06</span><strong>Gozdni potok</strong><span class="photo-arrow">↗</span><p>Življenjska žila gozdnega sveta.</p></figcaption></button></figure>
+
+        <figure class="photo-card" data-student="b"><button class="photo-open" data-src="images/dijakB/slika1.jpg" data-title="Odvržene smeti v gozdu" data-description="Odpadki v naravi onesnažujejo okolje in lahko poškodujejo živali."><div class="photo-placeholder litter"><span>🗑️</span><small>FOTOGRAFIJA 07</small></div><figcaption><span class="photo-index">B · 01</span><strong>Odvržene smeti v gozdu</strong><span class="photo-arrow">↗</span><p>Odpadki ne sodijo v naravo.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="b"><button class="photo-open" data-src="images/dijakB/slika2.jpg" data-title="Posekan del gozda" data-description="Krčenje gozda zmanjšuje življenjski prostor številnih vrst."><div class="photo-placeholder logged"><span>🪵</span><small>FOTOGRAFIJA 08</small></div><figcaption><span class="photo-index">B · 02</span><strong>Posekan del gozda</strong><span class="photo-arrow">↗</span><p>Izguba dreves pomeni izgubo habitatov.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="b"><button class="photo-open" data-src="images/dijakB/slika3.jpg" data-title="Japonski dresnik" data-description="Japonski dresnik je invazivna tujerodna rastlina, ki se hitro širi."><div class="photo-placeholder knotweed"><span>🌱</span><small>FOTOGRAFIJA 09</small></div><figcaption><span class="photo-index">B · 03</span><strong>Japonski dresnik</strong><span class="photo-arrow">↗</span><p>Invazivna vrsta lahko izpodriva domače rastline.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="b"><button class="photo-open" data-src="images/dijakB/slika4.jpg" data-title="Hotel za žuželke" data-description="Hotel za žuželke lahko ponudi zavetje nekaterim koristnim žuželkam."><div class="photo-placeholder hotel"><span>🏡</span><small>FOTOGRAFIJA 10</small></div><figcaption><span class="photo-index">B · 04</span><strong>Hotel za žuželke</strong><span class="photo-arrow">↗</span><p>Preprost način za dodatna skrivališča.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="b"><button class="photo-open" data-src="images/dijakB/slika5.jpg" data-title="Ptičja hišica" data-description="Pravilno nameščena in vzdrževana gnezdilnica lahko pomaga pticam."><div class="photo-placeholder nest"><span>🪺</span><small>FOTOGRAFIJA 11</small></div><figcaption><span class="photo-index">B · 05</span><strong>Ptičja hišica</strong><span class="photo-arrow">↗</span><p>Varno zatočišče za pernate sosede.</p></figcaption></button></figure>
+        <figure class="photo-card" data-student="b"><button class="photo-open" data-src="images/dijakB/slika6.jpg" data-title="Urejena gozdna učna pot" data-description="Učne poti obiskovalcem približajo naravo in spodbujajo spoštljiv obisk."><div class="photo-placeholder trail"><span>🥾</span><small>FOTOGRAFIJA 12</small></div><figcaption><span class="photo-index">B · 06</span><strong>Urejena gozdna učna pot</strong><span class="photo-arrow">↗</span><p>Spoznavanje narave z odgovornim obiskom.</p></figcaption></button></figure>
+      </div>
+      <p class="gallery-hint">Namig: klikni na kartico za povečavo. Ko dodata svoje fotografije, jih shranita pod enakimi imeni v mapi posameznega dijaka.</p>
+    </section>
+
+    <section class="video-section section" id="video">
+      <div class="wrap">
+        <div class="section-kicker"><span>04</span> POGLEJ IN SPOZNAJ</div>
+        <div class="gallery-heading"><div><h2>Zgodbe, ki jih <em>pove narava.</em></h2><p class="lead">Predstavitvena videa obeh prispevkov.</p></div></div>
+        <div class="video-grid">
+          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_DIJAK_A" title="Predstavitveni video Dijaka A" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-caption"><span>VIDEO 01 / DIJAK A</span><strong>Zakaj je življenje na kopnem pomembno?</strong><p>Vstavita ID prvega YouTube videa.</p></div></article>
+          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_DIJAK_B" title="Predstavitveni video Dijaka B" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-caption"><span>VIDEO 02 / DIJAK B</span><strong>Težave in rešitve v našem okolju</strong><p>Vstavita ID drugega YouTube videa.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-section section" id="igra">
+      <div class="wrap game-wrap">
+        <div class="section-kicker light"><span>05</span> PREIZKUSI SE</div>
+        <div class="game-heading"><div><h2>Gozdni <em>čistilec.</em></h2><p>Očisti gozdno jaso, vendar pazi, da ne zmotiš njenih prebivalcev!</p></div><div class="game-badge">🌲 EKO IZZIV</div></div>
+        <div class="game-panel">
+          <div class="game-top">
+            <div class="score-group"><div><span>TOČKE</span><strong id="score">0</strong></div><div><span>ŽIVLJENJA</span><strong id="lives">❤️❤️❤️</strong></div></div>
+            <button class="btn btn-game" id="start-game">Začni igro</button>
+          </div>
+          <div class="game-field" id="game-field" aria-label="Igralno polje gozdne jase">
+            <div class="game-intro" id="game-intro"><span>🍃</span><strong>Gozd potrebuje tvojo pomoč!</strong><p>Klikni na smeti (+10 točk). Naravo in živali pusti pri miru (−1 življenje).</p><small>Pripravi se in začni igro.</small></div>
+          </div>
+          <div class="game-bottom"><span>🧴 🥫 🛞 🛍️ = SMETI</span><span>🦔 🍄 🌰 🐝 🌸 = NARAVA</span><span id="game-status" aria-live="polite">Čaka na igralca</span></div>
+        </div>
+        <p class="game-tip"><strong>🌱 Eko nasvet:</strong> Kar prineseš v naravo, tudi odnesi s seboj. Še bolje: poberi odpadek, če je to varno, in ga pravilno odloži.</p>
+      </div>
+    </section>
+
+    <section class="closing section wrap">
+      <div class="closing-mark">✳</div>
+      <p class="eyebrow">NAŠA ODGOVORNOST SE ZAČNE BLIZU DOMA</p>
+      <h2>Varujmo naravo. <em>Vsak dan.</em></h2>
+      <p>Vsak posameznik lahko pomaga: zmanjšujmo odpadke, ločujmo, ostanimo na označenih poteh, spoštujmo živali, podpirajmo domače rastline in ohranjajmo cvetoče travnike. Skupaj lahko poskrbimo, da bodo gozdovi in travniki ostali živi tudi za prihodnje generacije.</p>
+      <a class="btn btn-primary" href="#domov">Nazaj na vrh ↑</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner"><a class="brand footer-brand" href="#domov"><span class="brand-mark">✳</span><span>NARAVA<span class="brand-light"> / SDG 15</span></span></a><p>Avtorja: Dijak A in Dijak B · COIL projekt</p><span>SKRB ZA NARAVO JE SKUPNA SKRB.</span></div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Povečana fotografija" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Zapri povečavo">×</button>
+    <div class="lightbox-content"><div class="lightbox-image" id="lightbox-image"></div><div class="lightbox-text"><span>GALERIJA / POVEČAVA</span><h3 id="lightbox-title"></h3><p id="lightbox-description"></p></div></div>
+  </div>
+</body>
+</html>

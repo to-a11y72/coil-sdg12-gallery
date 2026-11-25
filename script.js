@@ -1,12 +1,146 @@
-"use strict";
-// GALLERY: Photos and captions are edited in gallery-data.js.
-const grid=document.getElementById('photo-grid');
-for(const photo of galleryPhotos){const card=document.createElement('article');card.className='photo-card';card.dataset.category=photo.category;const btn=document.createElement('button');btn.className='photo-open';btn.type='button';btn.setAttribute('aria-label','Open '+photo.title);const img=document.createElement('img');img.src=photo.src;img.alt=photo.description;img.loading='lazy';btn.append(img);btn.addEventListener('click',()=>openPhoto(photo));const info=document.createElement('div');info.className='info';const author=document.createElement('span');author.textContent=photo.author;const heading=document.createElement('h3');heading.textContent=photo.title;const desc=document.createElement('p');desc.textContent=photo.description;info.append(author,heading,desc);card.append(btn,info);grid.append(card)}
-for(const filter of document.querySelectorAll('.filter'))filter.addEventListener('click',()=>{const choice=filter.dataset.filter;for(const f of document.querySelectorAll('.filter')){f.classList.toggle('active',f===filter);f.setAttribute('aria-pressed',String(f===filter))}for(const c of document.querySelectorAll('.photo-card'))c.hidden=choice!=='all'&&c.dataset.category!==choice});
-const lightbox=document.getElementById('lightbox'),lightboxImage=document.getElementById('lightbox-image');let previousFocus=null;function openPhoto(photo){previousFocus=document.activeElement;lightboxImage.src=photo.src;lightboxImage.alt=photo.description;document.getElementById('lightbox-caption').textContent=photo.title+' — '+photo.description;lightbox.hidden=false;document.body.style.overflow='hidden';document.getElementById('lightbox-close').focus()}function closePhoto(){lightbox.hidden=true;lightboxImage.removeAttribute('src');document.body.style.overflow='';if(previousFocus)previousFocus.focus()}document.getElementById('lightbox-close').addEventListener('click',closePhoto);lightbox.addEventListener('click',e=>{if(e.target===lightbox)closePhoto()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lightbox.hidden)closePhoto();if(e.key==='Tab'&&!lightbox.hidden){e.preventDefault();document.getElementById('lightbox-close').focus()}});
-// QUIZ: Replace these questions with your own SDG topic.
-const questions=[{q:'Your laptop is running slowly. What should you try first?',options:['Throw it away','Check for repair or upgrade options','Buy a new laptop immediately'],answer:1,explanation:'Repairing or upgrading can extend a device’s life.'},{q:'What is a good option for a working phone you no longer use?',options:['Donate or sell it after removing personal data','Put it in mixed household waste','Leave it outside'],answer:0,explanation:'Reusing working devices helps reduce unnecessary waste.'},{q:'Where should a broken electronic device go?',options:['Into a river','Into regular household waste','To an appropriate electronics collection point'],answer:2,explanation:'Electronics should be handled through suitable collection and recycling systems.'}];let qi=0,score=0,answered=false;const qtext=document.getElementById('quiz-question'),qopts=document.getElementById('quiz-options'),feedback=document.getElementById('quiz-feedback'),next=document.getElementById('quiz-next');function showQuestion(){answered=false;const q=questions[qi];document.getElementById('quiz-progress').textContent=`Question ${qi+1} of ${questions.length}`;document.getElementById('quiz-score').textContent=`Score: ${score}`;document.getElementById('quiz-bar').style.width=`${qi/questions.length*100}%`;qtext.textContent=q.q;qopts.replaceChildren();feedback.textContent='';next.hidden=true;questions[qi].options.forEach((option,index)=>{const b=document.createElement('button');b.type='button';b.textContent=option;b.addEventListener('click',()=>choose(index));qopts.append(b)})}function choose(index){if(answered)return;answered=true;const q=questions[qi];if(index===q.answer)score++;[...qopts.children].forEach((b,i)=>{b.disabled=true;if(i===q.answer)b.classList.add('correct');else if(i===index)b.classList.add('wrong')});feedback.textContent=(index===q.answer?'Correct! ':'Not quite. ')+q.explanation;document.getElementById('quiz-score').textContent=`Score: ${score}`;next.hidden=false;next.textContent=qi===questions.length-1?'See my results →':'Next question →'}next.addEventListener('click',()=>{qi++;if(qi<questions.length){showQuestion()}else{qtext.hidden=true;qopts.hidden=true;next.hidden=true;feedback.textContent='';document.getElementById('quiz-bar').style.width='100%';document.getElementById('quiz-finish').hidden=false;document.getElementById('quiz-result').textContent=`You scored ${score} out of ${questions.length}!`}});document.getElementById('quiz-restart').addEventListener('click',()=>{qi=0;score=0;qtext.hidden=false;qopts.hidden=false;document.getElementById('quiz-finish').hidden=true;showQuestion()});showQuestion();
-// SURVEY: Demo results are stored in localStorage on THIS browser only.
-// A public survey that aggregates all visitors needs an external database/backend.
-const key='coil-sdg-poll-demo-v1',choices=['Repair','Donate','Recycle'];let votes;try{votes=JSON.parse(localStorage.getItem(key))||{Repair:0,Donate:0,Recycle:0}}catch{votes={Repair:0,Donate:0,Recycle:0}};for(const c of choices)if(!Number.isFinite(votes[c])||votes[c]<0)votes[c]=0;function drawVotes(){const total=choices.reduce((s,c)=>s+votes[c],0),target=document.getElementById('poll-bars');target.replaceChildren();for(const c of choices){const percent=total?Math.round(votes[c]/total*100):0;const row=document.createElement('div');row.className='poll-row';const label=document.createElement('div');label.className='poll-row-top';const name=document.createElement('span');name.textContent=c;const amount=document.createElement('span');amount.textContent=`${votes[c]} vote(s) · ${percent}%`;label.append(name,amount);const track=document.createElement('div');track.className='poll-track';const fill=document.createElement('div');fill.className='poll-fill';fill.style.width=percent+'%';track.append(fill);row.append(label,track);target.append(row)}}document.getElementById('poll-vote').addEventListener('click',()=>{const selected=document.querySelector('input[name="poll"]:checked');if(!selected){alert('Please choose one answer first.');return}votes[selected.value]++;try{localStorage.setItem(key,JSON.stringify(votes))}catch{}document.getElementById('poll').hidden=true;document.getElementById('poll-results').hidden=false;drawVotes()});document.getElementById('poll-reset').addEventListener('click',()=>{votes={Repair:0,Donate:0,Recycle:0};try{localStorage.removeItem(key)}catch{}document.getElementById('poll').hidden=false;document.getElementById('poll-results').hidden=true;document.querySelectorAll('input[name="poll"]').forEach(x=>x.checked=false)});
-const toggle=document.querySelector('.menu-toggle'),nav=document.getElementById('navlinks');toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))});for(const a of nav.querySelectorAll('a'))a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')});
+// SDG 15 – interakcije galerije, navigacije in igre Gozdni čistilec
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  menuToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.textContent = open ? "×" : "☰";
+  });
+  navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  }));
+
+  // Filtriranje galerije
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const photoCards = document.querySelectorAll(".photo-card");
+  filterButtons.forEach(button => button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach(item => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    photoCards.forEach(card => {
+      card.hidden = filter !== "all" && card.dataset.student !== filter;
+    });
+  }));
+
+  // Lightbox: prikaže dejansko sliko, če obstaja; sicer ostane lep nadomestni prikaz.
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxTitle = document.getElementById("lightbox-title");
+  const lightboxDescription = document.getElementById("lightbox-description");
+  const closeLightbox = document.getElementById("lightbox-close");
+  let lastFocused = null;
+  document.querySelectorAll(".photo-open").forEach(button => button.addEventListener("click", () => {
+    lastFocused = button;
+    const src = button.dataset.src;
+    const title = button.dataset.title;
+    lightboxTitle.textContent = title;
+    lightboxDescription.textContent = button.dataset.description;
+    lightboxImage.replaceChildren();
+    const img = new Image();
+    img.src = src;
+    img.alt = title;
+    img.onerror = () => {
+      lightboxImage.textContent = button.querySelector(".photo-placeholder span").textContent;
+    };
+    lightboxImage.append(img);
+    lightbox.hidden = false;
+    closeLightbox.focus();
+  }));
+  function closeBox() {
+    lightbox.hidden = true;
+    if (lastFocused) lastFocused.focus();
+  }
+  closeLightbox.addEventListener("click", closeBox);
+  lightbox.addEventListener("click", event => { if (event.target === lightbox) closeBox(); });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !lightbox.hidden) closeBox();
+  });
+
+  // Igra Gozdni čistilec
+  const field = document.getElementById("game-field");
+  const startButton = document.getElementById("start-game");
+  const scoreDisplay = document.getElementById("score");
+  const livesDisplay = document.getElementById("lives");
+  const statusDisplay = document.getElementById("game-status");
+  const intro = document.getElementById("game-intro");
+  const rubbish = ["🧴", "🥫", "🛞", "🛍️"];
+  const nature = ["🦔", "🍄", "🌰", "🐝", "🌸"];
+  let score = 0, lives = 3, running = false, spawnTimer = null, endTimer = null;
+  let activeItems = new Set();
+
+  function updateScoreboard() {
+    scoreDisplay.textContent = score;
+    livesDisplay.textContent = "❤️".repeat(lives) + "♡".repeat(3 - lives);
+  }
+  function clearItems() {
+    activeItems.forEach(item => item.remove());
+    activeItems.clear();
+  }
+  function endGame() {
+    running = false;
+    clearInterval(spawnTimer);
+    clearTimeout(endTimer);
+    clearItems();
+    intro.hidden = false;
+    intro.innerHTML = `<span>🌱</span><strong>Igra je končana!</strong><p>Osvojil/-a si <b>${score} točk</b>. Vsak odpadek, ki ga pravilno odložimo, pomaga naravi.</p><small> Eko nasvet: uporabljaj steklenico za večkratno uporabo in se izogibaj plastiki za enkratno rabo.</small>`;
+    startButton.textContent = "Igraj znova";
+    statusDisplay.textContent = "Igra zaključena";
+  }
+  function spawnItem() {
+    if (!running) return;
+    const isTrash = Math.random() < 0.62;
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = "falling-item";
+    item.textContent = isTrash ? rubbish[Math.floor(Math.random() * rubbish.length)] : nature[Math.floor(Math.random() * nature.length)];
+    item.setAttribute("aria-label", isTrash ? "Poberi smet" : "Pusti naravo pri miru");
+    item.style.left = `${5 + Math.random() * 88}%`;
+    item.style.top = "-45px";
+    const duration = 3.4 + Math.random() * 1.7;
+    item.style.animationDuration = `${duration}s`;
+    let handled = false;
+    item.addEventListener("click", () => {
+      if (handled || !running) return;
+      handled = true;
+      if (isTrash) {
+        score += 10;
+        statusDisplay.textContent = "Odlično! Smet je pospravljena. +10";
+      } else {
+        lives -= 1;
+        statusDisplay.textContent = "Pazi na prebivalce gozda! −1 življenje";
+      }
+      updateScoreboard();
+      item.remove();
+      activeItems.delete(item);
+      if (lives <= 0) endGame();
+    });
+    item.addEventListener("animationend", () => {
+      item.remove();
+      activeItems.delete(item);
+    });
+    activeItems.add(item);
+    field.append(item);
+  }
+  function startGame() {
+    clearInterval(spawnTimer);
+    clearTimeout(endTimer);
+    clearItems();
+    score = 0; lives = 3; running = true;
+    updateScoreboard();
+    intro.hidden = true;
+    startButton.textContent = "Igra poteka …";
+    statusDisplay.textContent = "Zberi čim več točk!";
+    spawnItem();
+    spawnTimer = setInterval(spawnItem, 850);
+    // Kratek igralni krog; po koncu se pokaže rezultat in nasvet.
+    endTimer = setTimeout(endGame, 30000);
+  }
+  startButton.addEventListener("click", startGame);
+  updateScoreboard();
+});
